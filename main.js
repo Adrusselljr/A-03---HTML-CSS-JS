@@ -1,34 +1,35 @@
-// Query elements
-const remove = $('#remove')
-const add = $('#add')
-const count = $('#count')
-const boxes = $('.boxes')
-const box = $('.box')
 
-// Set variables
+const count = document.getElementById("count")
+const add = document.getElementById("add")
+const remove = document.getElementById("remove")
+const boxes = document.getElementById("boxes")
+
 let num = 0
+count.innerHTML = num
 
-// Set count and onClick
-count.text(num)
+const addBox = () => {
+    const boxDiv = document.createElement("div")
+    boxDiv.id = "box"
+    const star = document.createTextNode("★")
+    boxDiv.appendChild(star)
+    boxes.appendChild(boxDiv)
+}
 
-remove.on('click', () => {
-    num--
-    count.text(num)
-    boxBuilder(num)
-})
+const removeBox = () => {
+    let lastBox = document.querySelector("#boxes :last-of-type")
+    boxes.removeChild(lastBox)
+}
 
-add.on('click', () => {
-    num++
-    count.text(num)
-    boxBuilder(num)
-})
+add.onclick = () => {
+    num += 1
+    count.innerHTML = num
+    addBox()
+}
 
-// Set boxes
-const boxBuilder = num => {
-    for(let i = 0; i < num; i++) {
-        const layout = $(`
-            <div class="box">*</div>
-        `)
-        boxes.append(layout)
+remove.onclick = () => {
+    if (num > 0) {
+        num -= 1
+        count.innerHTML = num
+        removeBox()
     }
 }

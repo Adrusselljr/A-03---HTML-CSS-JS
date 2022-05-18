@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    /* outline: red dotted 1px; */
+}
+
+#wrapper {
+    width: 1400px;
+    margin-left: 27%;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    width: 600px;
+    height: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.boxes {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 10px;
+}

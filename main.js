@@ -32,4 +32,3 @@ const boxBuilder = num => {
         boxes.append(layout)
     }
 }
-box.remove()
